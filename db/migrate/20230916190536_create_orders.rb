@@ -1,10 +1,10 @@
 class CreateOrders < ActiveRecord::Migration[7.0]
   def change
     create_table :orders do |t|
-      t.int :amount
+      t.integer :amount
       t.references :customer, null: false, foreign_key: true
       t.datetime :order_date
-      t.int :quantity
+      t.integer :quantity
       t.references :staff, null:false, foreign_key: true
 
       t.timestamps
