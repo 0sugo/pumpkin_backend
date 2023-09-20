@@ -5,4 +5,4 @@ class Order < ApplicationRecord
   belongs_to :staff_id
   belongs_to :customer
 end
-qwertyui
+qwertyu
