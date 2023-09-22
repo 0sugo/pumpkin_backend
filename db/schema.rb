@@ -23,6 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_190705) do
   create_table "orderproducts", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "product_id", null: false
+    t.integer "quantity"
+    t.decimal "subtotal", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_orderproducts_on_order_id"
@@ -30,10 +32,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_190705) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "amount"
+    t.string "receipt_number"
     t.bigint "customer_id", null: false
     t.datetime "order_date"
-    t.integer "quantity"
     t.bigint "staff_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,7 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_190705) do
     t.string "category"
     t.string "name"
     t.integer "price"
-    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
