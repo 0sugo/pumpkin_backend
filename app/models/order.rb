@@ -6,3 +6,4 @@ class Order < ApplicationRecord
   belongs_to :staff, class_name:'Staff',foreign_key:'staff_id'
   belongs_to :customer
 end
+
