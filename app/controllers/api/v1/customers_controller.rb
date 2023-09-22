@@ -1,3 +1,3 @@
 class Api::V1::CustomersController < ApplicationController
-  qwertyui
+  qwertyu
 end
