@@ -8,9 +8,9 @@ class Api::V1::StaffsController < ApplicationController
     @staff = Staff.new(staff_params)
 
     if @staff.save
-      render json: {status:'Success',message:'Staff created successfully'},status: :ok
+      render json: { status:'Success',message:'Staff created successfully' },status: :ok
     else
-      render json: {status:'Failed',message:'Failed to create new staff'},status: :unprocessable_entity
+      render json: { status:'Failed',message:'Failed to create new staff' },status: :unprocessable_entity
     end
    end
 
