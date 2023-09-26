@@ -24,12 +24,14 @@ Product.create(
   category:"Beer",
   name:"Balozi",
   price:230,
+  quantity:25,
 )
 
 Product.create(
   category:"Spirits",
   name:"Kibao",
   price:250,
+  quantity:10,
 )
 
 #customer
