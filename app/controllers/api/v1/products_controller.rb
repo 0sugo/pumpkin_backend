@@ -1,6 +1,15 @@
 class Api::V1::ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.map do |product|
+      {
+        id: product.id,
+        category: product.category,
+        name: product.name,
+        price: product.price,
+        quantity: product.quantity
+      }
+    end
+
     render json: {status:"Success",message:"All products fetched succesfully",data:@products},status: :ok
    end
 
@@ -18,6 +27,6 @@ class Api::V1::ProductsController < ApplicationController
    private
 
    def product_params
-    params.require(:product).permit(:category,:name,:price)
+    params.require(:product).permit(:category,:name,:price,:quantity)
    end
 end
